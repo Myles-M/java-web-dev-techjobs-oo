@@ -1,5 +1,5 @@
 <component name="libraryTable">
-  <library name="commons-csv-1.4">
+  <library name="junit">
     <CLASSES>
       <root url="jar://$PROJECT_DIR$/lib/commons-csv-1.4.jar!/" />
     </CLASSES>
