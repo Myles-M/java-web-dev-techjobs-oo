@@ -1,7 +1,5 @@
 package org.launchcode.techjobs_oo;
-
 import java.util.Objects;
-
 public class Job {
 
     private int id;
@@ -46,6 +44,17 @@ public class Job {
     @Override
     public int hashCode() {
         return Objects.hash(id);
+    }
+
+    @Override
+    public String toString() {
+        String newline = "\n";
+        String id = "ID: " + this.getId() + "\n";
+        String employer = "Employer: " +this.getEmployer() + "\n";
+        String location = "Location: " + this.getLocation() + "\n";
+        String position = "Position Type: " + this.getPositionType() + "\n" ;
+        String coreCompetency= "Core Competency: " + this.getCoreCompetency();
+        return newline + id + employer +location + position + coreCompetency + newline;
     }
 
     // TODO: Add getters for each field EXCEPT nextId. Add setters for each field EXCEPT nextID
