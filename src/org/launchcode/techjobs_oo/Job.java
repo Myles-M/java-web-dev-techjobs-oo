@@ -31,7 +31,15 @@ public class Job {
 
     // TODO: Add custom equals and hashCode methods. Consider two Job objects "equal" when their id fields
     //  match.
-
+public String inputCheck(String input){
+        String noData ="Data not available";
+        if (input.equals("")) {
+            return noData;
+        }
+        else {
+            return  input;
+        }
+}
 
     @Override
     public boolean equals(Object o) {
@@ -49,17 +57,25 @@ public class Job {
     @Override
     public String toString() {
         String newline = "\n";
-        String id = "ID: " + this.getId() + "\n";
-        String employer = "Employer: " +this.getEmployer() + "\n";
-        String location = "Location: " + this.getLocation() + "\n";
-        String position = "Position Type: " + this.getPositionType() + "\n" ;
-        String coreCompetency= "Core Competency: " + this.getCoreCompetency();
-        return newline + id + employer +location + position + coreCompetency + newline;
-    }
+        int id = this.getId();
+        String name = inputCheck(this.getName());
+        String employer =  inputCheck(this.getEmployer().getValue());
+        String location = inputCheck(this.getLocation().getValue());
+        String position =  inputCheck(this.getPositionType().getValue());
+        String coreCompetency=  inputCheck(this.getCoreCompetency().getValue());
+
+            return newline +
+                    "ID: " + id  + "\n" +
+                    "Name: " + name + "\n" +
+                    "Employer: " + employer +"\n" +
+                    "Location: " + location +"\n" +
+                    "Position Type: " + position +"\n" +
+                    "Core Competency: " + coreCompetency + "\n" +
+                    newline;
+        }
 
     // TODO: Add getters for each field EXCEPT nextId. Add setters for each field EXCEPT nextID
     //  and id.
-
 
     public int getId() {
         return id;
